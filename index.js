@@ -9,7 +9,6 @@ const bodyparser= require('body-parser');
 const mongoose= require('mongoose');
 
 dotenv.config();
-//'mongodb+srv://Anand:Anand128@cluster0-ham1u.mongodb.net/CoronaVaccine?retryWrites=true&w=majority'
 mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true , useUnifiedTopology: true,useFindAndModify:false  })
 .then(()=>{console.log("DB connected")});
 mongoose.connection.on("error",err=>{
@@ -37,8 +36,8 @@ app.use((req,res,next)=>{
 
     const port= process.env.PORT || 3000;
     app.listen(port ,()=>{console.log(`Server started on port ${port}`)});
-// setInterval(() => {
 
+// setInterval(() => {
 //  getData()   
 // },2000);
 
@@ -46,14 +45,14 @@ app.use((req,res,next)=>{
 // async function getData(){
 //     const api2 = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=110001&date=08-05-2021";
 // try{
-//     fetch(api2,
+//     const request= await fetch(api2,
 //         {
 //             headers:{
 //                 'User-Agent':'anand'
-//             }
-//         })
-//         .then(res => res.json())
-//     .then(json => console.log(json))
+//             } });
+
+//      const response= await request.json();       
+//     console.log(response);
 // } catch(error){
 // console.log(error);
 
